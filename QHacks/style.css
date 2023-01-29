@@ -1,0 +1,35 @@
+.parent{
+    display: block;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+#webcam-video{
+    margin-top: 3vh;
+    width: 50vw;
+    transform: scaleX(-1);
+    box-shadow: 0 0 0 1.5px;
+    border-color: (0, 128, 58);
+}
+
+button{
+    border-color: rgb(0, 128, 58);
+    color:rgb(0, 128, 58);
+    font-size: 1.5vmax;
+    display: block;
+    padding: 2vw 10vw;
+    border-radius: 2vmax;
+    margin: 50px auto;
+    transition: 0.1s;
+}
+
+button:hover{
+    color:white;
+    background-color: black;
+}
+
+.response{
+    font-size: 1.7vmax;
+    display: none;
+}
