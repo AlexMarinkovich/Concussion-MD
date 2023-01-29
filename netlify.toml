@@ -1,2 +1,2 @@
 [build]
-  command = "pip install -r requirements.txt && flask run --host=127.0.0.1 --port=$PORT"
+  command = "pip install -r requirements.txt && flask run --host=127.0.0.1 --port=5000"
