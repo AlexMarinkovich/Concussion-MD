@@ -32,7 +32,7 @@ function sendToPython(recordedBlob) {
     reader.readAsDataURL(recordedBlob)
     reader.onloadend = function() {
         const base64data = reader.result;
-        fetch('http://alexmarinkovich.pythonanywhere.com/processvideo', {
+        fetch('https://alexmarinkovich.pythonanywhere.com/processvideo', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({videodata: base64data})
@@ -40,7 +40,7 @@ function sendToPython(recordedBlob) {
     }
 
 setTimeout(function() {
-    fetch('http://alexmarinkovich.pythonanywhere.com/getresult')
+    fetch('https://alexmarinkovich.pythonanywhere.com/getresult')
     .then(response => response.json())
     .then(data => {
         console.log(data)
