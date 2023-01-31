@@ -46,7 +46,7 @@ setTimeout(function() {
     .then(response => response.json())
     .then(data => {
         console.log(data)
-        if (data == "") {return}
+        if (data == "" || data == "0") {return}
         else if (data == "-1") {document.getElementById("UnsucessfulText").style.display = "block"}
         else {document.getElementById("SucessfulText").style.display = "block"} 
         })
