@@ -38,7 +38,6 @@ function sendToPython(recordedBlob) {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({videodata: base64data})
         })} 
-    document.getElementById("SucessfulText").style.display = "block" // take this out later
     }
 
 setTimeout(function() {
@@ -48,7 +47,8 @@ setTimeout(function() {
         console.log(data)
         if (data == "") {return}
         else if (data == "-1") {document.getElementById("UnsucessfulText").style.display = "block"}
-        else {document.getElementById("SucessfulText").style.display = "block"} 
+        else if (data == "1" || data == "2" || data == "3") {document.getElementById("SucessfulText").style.display = "block"} 
+        else {document.getElementById("UnsucessfulText").style.display = "block"} // take this out later
         })
     .catch(error => {console.log(error)})
     }, 1000);
