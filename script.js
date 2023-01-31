@@ -32,7 +32,7 @@ function sendToPython(recordedBlob) {
     reader.readAsDataURL(recordedBlob)
     reader.onloadend = function() {
         const base64data = reader.result;
-        fetch('http://127.0.0.1:5000/', {
+        fetch('http://127.0.0.1:5000/processvideo', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({videodata: base64data})
@@ -40,7 +40,7 @@ function sendToPython(recordedBlob) {
     }
 
 setTimeout(function() {
-    fetch('http://127.0.0.1:5000/p')
+    fetch('http://127.0.0.1:5000/getresult')
     .then(response => response.json())
     .then(data => {
         console.log(data)
