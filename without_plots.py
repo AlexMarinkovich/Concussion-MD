@@ -1,9 +1,9 @@
 import cv2
-import datetime as dt
-import numpy as np
-import json
-import requests
-import pandas as pd
+# import datetime as dt
+# import numpy as np
+# import json
+# import requests
+# import pandas as pd
 import time
 import base64
 import pygsheets as pygsheets
@@ -16,7 +16,7 @@ def get_concussion_level(base64data):
             break
     
     # decode the base64data and upload it to a video file
-    fh = open("vid.mp4", "wb")
+    fh = open("/home/alexMarinkovich/mysite/vid.mp4", "wb")
     fh.write(base64.b64decode(base64data))
     fh.close()
 
@@ -165,7 +165,7 @@ def get_concussion_level(base64data):
 
 
     # open the google spreadsheet (where 'PY to Gsheet Test' is the name of my sheet)
-    gc = pygsheets.authorize(service_file='creds.json')
+    gc = pygsheets.authorize(service_file='/home/alexMarinkovich/mysite/creds.json')
     sh = gc.open('QHacks')
     wks = sh.sheet1
     wks.update_value("A1", concussion_level)
