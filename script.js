@@ -34,6 +34,7 @@ function sendToPython(recordedBlob) {
         const base64data = reader.result;
         fetch('https://alexmarinkovich.pythonanywhere.com/processvideo', {
             method: 'POST',
+            mode: 'no-cors',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({videodata: base64data})
         })}  
